@@ -1,0 +1,391 @@
+\documentclass{csuthesis}
+
+\titlecn{中文标题}
+\titleen{English Title}
+\author{作者}
+
+\priormajor{计算机科学与技术}
+\minormajor{计算机应用技术}
+\interestmajor{旁门左道}
+
+\supervisor{xxx\ 教授}
+\subsupervisor{}
+\department{计算机学院}
+\studentid{123456789}
+
+\clcnumber{TP391} 				% 中图分类号 Chinese Library Classification
+\schoolcode{10533}			% 学校代码
+\udc{004.9}						% UDC
+\academiccategory{学术学位}	% 学术类别
+%\blindreviewtrue
+\blindreviewfalse
+
+% 添加参考文献
+% 所有cite格式引用数据放在references.bib文件中
+\addbibresource{references.bib}
+
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 封面
+	% -----------------------------------------------%
+	\makecoverpage
+	
+	\newpage
+	\frontmatter
+	\ifblindreview	% 盲审不需要扉页和声明页
+	\else
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 扉页 
+	% -----------------------------------------------%
+	\maketitlepage
+	\newpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 声明页
+	% -----------------------------------------------%
+	\announcement
+	\newpage
+	\fi
+
+    \begin{abstractcn}
+        \noindent
+        {\heiti 摘要 \textbf{摘要：}}摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要。\fontinfo{摘要}。
+        
+        摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要。
+        
+        % 空一行
+        \vspace*{\baselineskip}
+        \noindent
+        图 23 幅，表 15 个，参考文献 106 篇。
+        
+		% 空两行
+		\vspace*{2\baselineskip}
+		\noindent
+        {\heiti\textbf{关键字：}}关键词1；关键词2；关键词3\\
+        {\heiti\textbf{分类号：}}TP391
+
+    \end{abstractcn}
+
+	\begin{abstracten}
+		\noindent
+		\textbf{Abstract:} Abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract. \fontinfo{Abstract}
+		
+		Abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract.
+		
+		% 空一行
+		\vspace*{\baselineskip}
+		\noindent
+		23 Figures, 15 tables, 106 references.
+		
+		% 空两行
+		\vspace*{2\baselineskip}
+		\noindent
+		{\textbf{Keywords:}} Keywords1; Keywords2; Keywords3\\
+		{\textbf{Classification:}} TP391
+	\end{abstracten}
+
+    \tableofcontents
+    
+    \newpage
+    \mainmatter
+    
+    \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\quad#1}{}}
+    
+    \chapter{绪论}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \markright{}
+    \section{课题研究的背景与意义}
+
+    课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。
+
+    课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。
+
+    课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。行距：\the\baselineskip。
+    
+    \section{ctex字体研究}
+    
+    {\noindent \zihao{0} \fontinfo{初号}。}
+    
+    {\noindent \zihao{-0} \fontinfo{小初号}。}
+    
+    {\noindent \zihao{1} \fontinfo{一号}。}
+    
+    {\noindent \zihao{-1} \fontinfo{小一号}。}
+    
+    {\noindent \zihao{2} \fontinfo{二号}。}
+    
+    {\noindent \zihao{-2} \fontinfo{小二号}。}
+    
+    {\noindent \zihao{3} \fontinfo{三号}。}
+    
+    {\noindent \zihao{-3} \fontinfo{小三号}。}
+    
+    {\noindent \zihao{4} \fontinfo{四号}。}
+    
+    {\noindent \zihao{-4} \fontinfo{小四号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    \noindent \fontinfo{正文}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    
+    {\noindent \zihao{5} \fontinfo{五号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    {\noindent \zihao{-5} \fontinfo{小五号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    {\noindent \zihao{6} \fontinfo{六号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    {\noindent \zihao{-6} \fontinfo{小六号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    {\noindent \zihao{7} \fontinfo{七号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    {\noindent \zihao{8} \fontinfo{八号}。MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
+    
+    \noindent 段间距 \the\parskip
+    
+    \section{存在的难点与挑战}
+
+    存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。
+
+    存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。存在的难点与挑战。
+
+    \section{国内外研究现状与发展动态}
+    \subsection{国内研究}
+    国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。
+
+    国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。国内研究。
+
+    \subsection{国外研究}
+    国外研究。国外研究。国外研究。国外研究。国外研究。国外研究。
+
+    国外研究。国外研究。国外研究。国外研究。国外研究。国外研究。
+
+    \section{本文主要工作与内容安排}
+
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+    
+    本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
+
+    \chapter{\fontinfo{章}}
+    \section{\fontinfo{节}}
+    \subsection{\fontinfo{小节}}
+
+    \chapter{研究内容1}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \section{介绍}
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    \section{相关工作}
+    相关工作。相关工作。相关工作。相关工作。
+
+    相关工作。相关工作。相关工作。相关工作。
+
+    \section{方法}
+    方法。方法。方法。方法。方法。方法。方法。
+
+    方法。方法。方法。方法。方法。方法。方法。
+
+    公式\ref{eq:eq1}。
+
+    \begin{equation}
+        a^2 + b^2 = c^2 \label{eq:eq1}
+    \end{equation}
+
+    图片\ref{fig:image1}。
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/image.jpeg}
+        \caption{××图}
+        \label{fig:image1}
+    \end{figure}
+
+    表格\ref{tab:table1}。
+    \begin{table}
+        \centering
+        \caption{**表}
+        \label{tab:table1}
+        \begin{tabular}{c|c}
+            \hline
+            列1 & 列2 \\
+            \hline
+            值1 & 值2 \\
+            值1 & 值2 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \section{实验}
+    实验。实验。实验。实验。实验。
+
+    实验。实验。实验。实验。实验。
+    
+    \chapter{研究内容2}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \section{介绍}
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    \section{相关工作}
+    相关工作。相关工作。相关工作。相关工作。
+
+    相关工作。相关工作。相关工作。相关工作。
+
+    \section{方法}
+    方法。方法。方法。方法。方法。方法。方法。
+
+    方法。方法。方法。方法。方法。方法。方法。
+
+    公式\ref{eq:eq2}。
+
+    \begin{equation}
+        a^2 + b^2 = c^2 \label{eq:eq2}
+    \end{equation}
+
+    图片\ref{fig:image2}。
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/image.jpeg}
+        \caption{××图}
+        \label{fig:image2}
+    \end{figure}
+
+    表格\ref{tab:table2}。
+    \begin{table}
+        \centering
+        \caption{**表}
+        \label{tab:table2}
+        \begin{tabular}{c|c}
+            \hline
+            列1 & 列2 \\
+            \hline
+            值1 & 值2 \\
+            值1 & 值2 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \section{实验}
+    实验。实验。实验。实验。实验。
+
+    实验。实验。实验。实验。实验。
+
+    \chapter{研究内容3}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \section{介绍}
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    介绍。介绍。介绍。介绍。介绍。介绍。
+
+    \section{相关工作}
+    相关工作。相关工作。相关工作。相关工作。
+
+    相关工作。相关工作。相关工作。相关工作。
+
+    \section{方法}
+    方法。方法。方法。方法。方法。方法。方法。
+
+    方法。方法。方法。方法。方法。方法。方法。
+
+    公式\ref{eq:eq3}。
+
+    \begin{equation}
+        a^2 + b^2 = c^2 \label{eq:eq3}
+    \end{equation}
+
+    图片\ref{fig:image3}。
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/image.jpeg}
+        \caption{××图}
+        \label{fig:image3}
+    \end{figure}
+
+    表格\ref{tab:table3}。
+    \begin{table}
+        \centering
+        \caption{**表}
+        \label{tab:table3}
+        \begin{tabular}{c|c}
+            \hline
+            列1 & 列2 \\
+            \hline
+            值1 & 值2 \\
+            值1 & 值2 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \section{实验}
+    实验。实验。实验。实验。实验。
+
+    实验。实验。实验。实验。实验。
+
+    \chapter{总结与展望}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \section{工作总结}
+    工作总结。工作总结。工作总结。工作总结。
+
+    工作总结。工作总结。工作总结。工作总结。
+
+    \section{工作展望}
+    工作展望。工作展望。工作展望。工作展望。
+
+    工作展望。工作展望。工作展望。工作展望。
+    
+    参考文献引用\cite{lamport1994latex}；另一个引用\cite{王夫之1977周易外传}。
+
+	%\nocite{*}
+    \printbibliography
+    %\bibliography{references}
+    
+    % 攻读学位期间主要研究成果
+    % 上空一行居中书写“攻读学位期间主要的研究成果”（三号黑体加粗，段前18 磅、段后12 磅），下空一行左起分类按时间顺序列出作者在攻读学位期间取得的与学位论文相关的研究成果（中文小四号宋体，英文小四号Times New Roman），含参加的研究项目、获奖情况、专利、专著、发表学术论文（含正式录用论文）等，每一条另起一行，开头缩进两个字符，每写一类空一行，发表学术论文中的作者名字需加粗，书写格式参照参考文献格式。
+    \newpage
+    \vspace*{\baselineskip}
+    \vspace*{18bp}
+    \begin{center}
+    	\zihao{3} \heiti \bfseries 攻读学位期间主要研究成果
+    	\addcontentsline{toc}{chapter}{攻读学位期间主要研究成果}
+    \end{center}
+	\vspace*{12bp}
+	\vspace*{\baselineskip}
+    
+    攻读学位期间主要研究成果。攻读学位期间主要研究成果。攻读学位期间主要研究成果。
+
+    攻读学位期间主要研究成果。攻读学位期间主要研究成果。攻读学位期间主要研究成果。
+    
+    % 致谢
+    % 作者对给予指导、各类资助和协助完成研究工作以及提供各种对论文工作有利条件的单位及个人表示感谢。上空一行居中书写“致谢”（三号黑体加粗），二字中间空两格，段前18磅、段后12 磅，后空一行缩进两个字符书写致谢内容，固定行距20 磅。致谢应实事求是，切忌浮夸与庸俗之词。
+    \newpage
+    \vspace*{\baselineskip}
+    \vspace*{18bp}
+    \begin{center}
+    	\zihao{3} \heiti \bfseries 致\hspace*{1.5em}谢
+    	\addcontentsline{toc}{chapter}{致谢}
+    \end{center}
+    \vspace*{12bp}
+    \vspace*{\baselineskip}
+    
+    致谢。致谢。致谢。致谢。致谢。
+
+    致谢。致谢。致谢。致谢。致谢。
+
+\end{document}
