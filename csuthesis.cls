@@ -197,7 +197,7 @@ CSU Thesis class]
 	\begin{center}
 		\linespread{1.5}
 		\vspace*{1.5cm}
-		{\zihao{-2} \bfseries \heiti 博士学位论文 \par} % 小二号黑体
+		{\zihao{-2} \bfseries \heiti 硕士学位论文 \par} % 小二号黑体
 		\vspace{2\baselineskip} % 两个空行
 		{\zihao{2} \bfseries \heiti \@titlecn \par} % 二号黑体
 		{\zihao{-2}\bfseries \@titleen \par} % 小二号，timesnewroman

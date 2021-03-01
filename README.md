@@ -23,7 +23,7 @@ xelatex -synctex=1 -interaction=nonstopmode main.tex
 
 ## 参考资料
 
-- 主要参考郭大侠编写的LaTex模板[LaTex模板](https://github.com/CSGrandeur/CSU-Thesis-LaTeX-Template)。
+- 主要参考郭大侠编写的[LaTex模板](https://github.com/CSGrandeur/CSU-Thesis-LaTeX-Template)。
 - latex入门教程《一份不太简短的latex2e介绍》。通过`texdoc lshort-zh-cn`查看。
 - CTEX介绍《CTEX宏集手册》，`texdoc ctex`。
 - 《The LATEX2E Sources》，`texdoc source2e`。
