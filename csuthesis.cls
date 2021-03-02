@@ -403,11 +403,11 @@ CSU Thesis class]
 %               {before-code}%定义标题前的内容
 %               [after-code]%定义标题后的内容
 % 章名三号黑体加粗，段前18磅，段后12磅，居中
-\titleformat{\chapter}{\zihao{3} \centering \heiti \bfseries}{\thechapter}{1em}{}
+\titleformat{\chapter}{\zihao{3} \centering \heiti \bfseries}{\thechapter}{0.8em}{}
 % 节名四号宋体，段前10磅，段后8磅，顶格编排
-\titleformat{\section}{\zihao{4} \songti}{\thesection}{1em}{}
+\titleformat{\section}{\zihao{4} \songti}{\thesection}{0.8em}{}
 % 小节名小四号宋体，段前10磅，段后8磅，顶格编排
-\titleformat{\subsection}{\zihao{-4} \songti}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\zihao{-4} \songti}{\thesubsection}{0.8em}{}
 
 % 定义在目录中的格式
 % \titlecontents{标题名}
@@ -493,7 +493,7 @@ CSU Thesis class]
 % 前置部分
 \fancypagestyle{frontstyle}{
 	\fancyhf{} % 清空页眉页脚的设置
-	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\headrulewidth}{0pt} % 分隔线宽度
 	\fancyfoot[C]{\zihao{-5} \thepage} % 页码位于页面底端，居中书写（Times New Roman 小五号）
 }
 
@@ -505,7 +505,7 @@ CSU Thesis class]
 % 后置部分
 \fancypagestyle{mainstyle}{
 	\fancyhf{} % 清空页眉页脚的设置
-	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\headrulewidth}{0.4pt} % 分隔线宽度
 	\fancyhead[L]{\zihao{5} \songti 中南大学硕士学位论文}
 	\fancyhead[R]{\zihao{5} \songti \leftmark}
 	\fancyfoot[C]{\zihao{-5} \thepage} % 页码位于页面底端，居中书写（Times New Roman 小五号）
