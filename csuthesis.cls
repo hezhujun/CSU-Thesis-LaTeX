@@ -456,8 +456,7 @@ CSU Thesis class]
 % 图下方描述的楷体字
 \DeclareCaptionFont{kai}{\kaishu}
 \DeclareCaptionFont{five}{\zihao{5}}
-\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
-
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 \captionsetup[figure]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
@@ -465,7 +464,7 @@ CSU Thesis class]
 	position=bottom    % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 % 表格格式
-\renewcommand{\thetable}{\arabic{section}-\arabic{table}}
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
 \captionsetup[table]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
