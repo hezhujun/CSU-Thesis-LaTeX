@@ -37,9 +37,10 @@ CSU Thesis class]
 \RequirePackage{titlesec}
 % 设置目录
 \RequirePackage{titletoc}
+
 % 设置浮动体的标题
 \RequirePackage{caption}
-\RequirePackage{subcaption}
+%\RequirePackage{subcaption}
 % 管理参考文献
 % 设置参考文献样式为 gb7714-2015
 \RequirePackage[style=gb7714-2015, backend=biber]{biblatex}
@@ -63,6 +64,8 @@ CSU Thesis class]
 \RequirePackage{multirow}
 % 算法编号
 \RequirePackage{algorithm}
+% 三线表格式
+\RequirePackage{booktabs}
 % 自定义关键词
 %\RequirePackage{pgfkeys}
 
@@ -250,7 +253,7 @@ CSU Thesis class]
 			\zihao{-2}
 			% 注意centering的使用，只在局部环境中使用。
 			\vspace{4ex} % 空行
-			{ \bfseries \heiti 博士学位论文 \par} % 小二号黑体
+			{ \bfseries \heiti 硕士学位论文 \par} % 小二号黑体
 			\vspace{4ex} % 空行
 			{ \bfseries \heiti \@titlecn \par} % 中文标题小二号黑体
 			{ \bfseries \@titleen \par} % 英文标题小二号 Times New Roman

@@ -1,5 +1,8 @@
 \documentclass{csuthesis}
 
+% 设置并排放置多图
+\usepackage{subfigure}
+
 \titlecn{中文标题}
 \titleen{English Title}
 \author{作者}
@@ -89,11 +92,10 @@
     \newpage
     \mainmatter
     
-    \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\quad#1}{}}
+    \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\hspace{0.8em}#1}{}}
     
     \chapter{绪论}
-    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
-    \markright{}
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页眉页脚设置
     \section{课题研究的背景与意义}
 
     课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。课题研究的背景与意义。
@@ -175,12 +177,8 @@
     
     本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。本文主要工作与内容安排。
 
-    \chapter{\fontinfo{章}}
-    \section{\fontinfo{节}}
-    \subsection{\fontinfo{小节}}
-
     \chapter{研究内容1}
-    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页眉页脚设置
     \section{介绍}
     介绍。介绍。介绍。介绍。介绍。介绍。
 
@@ -212,20 +210,97 @@
         \label{fig:image1}
     \end{figure}
 
-    表格\ref{tab:table1}。
+    三线表格\ref{tab:table1}。
     \begin{table}
         \centering
         \caption{**表}
         \label{tab:table1}
-        \begin{tabular}{c|c}
-            \hline
+        \begin{tabular}{c c}
+            \toprule[2pt]
             列1 & 列2 \\
-            \hline
+            \midrule
             值1 & 值2 \\
             值1 & 值2 \\
-            \hline
+            \bottomrule[2pt]
         \end{tabular}
     \end{table}
+
+    长表格的续表形式\ref{tab:long_table1}。如果长表格的多个表格之间插入了后文的内容，灵活地调整表格的长度，使得一个表格占一页。或者灵活地调整浮动体table的位置。或者调整后文（看tex文件）。
+    \begin{table}[!t]
+        \centering
+        \caption{长表格}
+        \label{tab:long_table1}
+        \begin{tabular}{c c}
+            \toprule[2pt]
+            列1 & 列2 \\
+            \midrule
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            \bottomrule[2pt]
+        \end{tabular}
+    \end{table}
+
+    %\clearpage % 取消该行注释，同时注释下表后面的\clearpage，看看效果
+
+    \begin{table}[!t]
+        \centering
+        \caption*{表\thetable \quad 长表格续}
+        \begin{tabular}{c c}
+            \toprule[2pt]
+            列1 & 列2 \\
+            \midrule
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            值1 & 值2 \\
+            \bottomrule[2pt]
+        \end{tabular}
+    \end{table}
+
+    \clearpage % 上面是长表格，之后的内容直接在新页面显示
 
     \section{实验}
     实验。实验。实验。实验。实验。
@@ -233,7 +308,7 @@
     实验。实验。实验。实验。实验。
     
     \chapter{研究内容2}
-    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页眉页脚设置
     \section{介绍}
     介绍。介绍。介绍。介绍。介绍。介绍。
 
@@ -286,7 +361,7 @@
     实验。实验。实验。实验。实验。
 
     \chapter{研究内容3}
-    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页眉页脚设置
     \section{介绍}
     介绍。介绍。介绍。介绍。介绍。介绍。
 
@@ -339,7 +414,7 @@
     实验。实验。实验。实验。实验。
 
     \chapter{总结与展望}
-    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页面页脚设置
+    \thispagestyle{mainstyle} % \chapter后面必须加这条命令启动页眉页脚设置
     \section{工作总结}
     工作总结。工作总结。工作总结。工作总结。
 
