@@ -134,7 +134,7 @@ CSU Thesis class]
 %\newCJKfontfamily[kai]\kaishu{KaiTi}[AutoFakeBold=1]
 % 协议页的标题按模板是华文新魏
 \newCJKfontfamily[huawenxinwei]\hwxw{STXinwei}[AutoFakeBold=0]
-\setCJKmainfont{SimSun} % 设置中文字体为宋体
+\setCJKmainfont{SimSun}[BoldFont=SimHei] % 设置中文字体为宋体，粗体使用黑体字体
 
 % 关于word的行距（单倍行距、固定值）的相关介绍，请看 https://zhuanlan.zhihu.com/p/35869432
 % 关于latex的行距介绍，请看 https://zhuanlan.zhihu.com/p/56127244
