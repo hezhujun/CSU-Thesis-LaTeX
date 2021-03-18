@@ -407,6 +407,7 @@ CSU Thesis class]
 %               [after-code]%定义标题后的内容
 % 章名三号黑体加粗，段前18磅，段后12磅，居中
 \titleformat{\chapter}{\zihao{3} \centering \heiti \bfseries}{\thechapter}{0.8em}{}
+\titlespacing{\chapter}{0pt}{0bp}{12bp}
 % 节名四号宋体，段前10磅，段后8磅，顶格编排
 \titleformat{\section}{\zihao{4} \songti}{\thesection}{0.8em}{}
 % 小节名小四号宋体，段前10磅，段后8磅，顶格编排
