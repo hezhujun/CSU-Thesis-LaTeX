@@ -372,7 +372,7 @@ CSU Thesis class]
 % 中文摘要页（具体见附件1.样例8）上空一行居中打印论文题名（三号黑体加粗，段前18 磅、段后12 磅），换行顶格编排“摘要：”（四号黑体加粗）及摘要内容（四号宋体），每段开头空二格。摘要内容后空一行顶格编排图、表、参考文献的数量（四号宋体）；空两行后顶格编排“关键字：”和“分类号：”（四号黑体加粗），每篇论文应选取3-8 个关键词，每一关键词之间用分号（中文摘要为全角符号，英文摘要为半角符号）分开，最后一个关键词后不打标点符号。20磅行距。
 \newenvironment{abstractcn}{
     \clearpage
-    \vspace*{\baselineskip} % 空一行
+    \vspace{0.5\baselineskip} % 空一行
     \vspace{18bp} % 段前18磅
     \begin{center}
         \zihao{3}\heiti\textbf{\@titlecn}
@@ -386,7 +386,7 @@ CSU Thesis class]
 % 英文摘要格式和内容与中文摘要相对应，另起一页（具体见附件1.样例9）。上空一行居中打印英文题名（三号Times NewRoman 字体加粗），换行顶格编排“Abstract：”（四号Times NewRoman 加粗）及英文摘要内容（四号Times New Roman 字体），摘要内容每段开头留四个字符空格。摘要内容后下空两行，顶格编排“Keywords：”和“Classification：”（四号Times NewRoman 加粗）。20磅行距。
 \newenvironment{abstracten}{
     \clearpage
-    \vspace*{\baselineskip} % 空一行
+    \vspace{0.5\baselineskip} % 空一行
     \vspace{18bp} % 段前18磅
     \begin{center}
         \zihao{3}\textbf{\@title}
@@ -426,13 +426,13 @@ CSU Thesis class]
 
 \renewcommand{\tableofcontents}{%
 	\clearpage
-	\vspace*{\baselineskip} % 上空一行
-	\vspace*{18bp} % 段前18 磅
+	\vspace{0.5\baselineskip} % 上空一行
+	\vspace{18bp} % 段前18 磅
 	\begin{center}
 		\zihao{3} \heiti \bfseries 目\hspace*{1.5em}录
 	\end{center}
-	\vspace*{12bp} % 段后12 磅
-	\vspace*{\baselineskip} % 下空一行
+	\vspace{12bp} % 段后12 磅
+	\vspace{\baselineskip} % 下空一行
 	\@starttoc{toc}
 }
 
