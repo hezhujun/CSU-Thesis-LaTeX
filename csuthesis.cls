@@ -61,7 +61,7 @@ CSU Thesis class]
 \RequirePackage{tabu}
 % multirow 支持在表格中跨行
 \RequirePackage{multirow}
-% 算法编号
+% 算法
 \RequirePackage{algorithm}
 % 三线表格式
 \RequirePackage{booktabs}
@@ -375,6 +375,7 @@ CSU Thesis class]
 % 中文摘要页（具体见附件1.样例8）上空一行居中打印论文题名（三号黑体加粗，段前18 磅、段后12 磅），换行顶格编排“摘要：”（四号黑体加粗）及摘要内容（四号宋体），每段开头空二格。摘要内容后空一行顶格编排图、表、参考文献的数量（四号宋体）；空两行后顶格编排“关键字：”和“分类号：”（四号黑体加粗），每篇论文应选取3-8 个关键词，每一关键词之间用分号（中文摘要为全角符号，英文摘要为半角符号）分开，最后一个关键词后不打标点符号。20磅行距。
 \newenvironment{abstractcn}{
     \clearpage
+	\pdfbookmark[0]{中文摘要}{abstractcn}
     \vspace*{-5bp}
     \begin{center}
         \zihao{3}\heiti\textbf{\@titlecn}
@@ -388,6 +389,7 @@ CSU Thesis class]
 % 英文摘要格式和内容与中文摘要相对应，另起一页（具体见附件1.样例9）。上空一行居中打印英文题名（三号Times NewRoman 字体加粗），换行顶格编排“Abstract：”（四号Times NewRoman 加粗）及英文摘要内容（四号Times New Roman 字体），摘要内容每段开头留四个字符空格。摘要内容后下空两行，顶格编排“Keywords：”和“Classification：”（四号Times NewRoman 加粗）。20磅行距。
 \newenvironment{abstracten}{
     \clearpage
+	\pdfbookmark[0]{英文摘要}{abstracten}
     \vspace*{-5bp}
     \begin{center}
         \zihao{3}\textbf{\@titleen}
@@ -433,6 +435,7 @@ CSU Thesis class]
 
 \renewcommand{\tableofcontents}{%
 	\clearpage
+	\pdfbookmark[0]{目录}{tableofcontents}
 	\vspace*{-5bp}
 	\begin{center}
 		\zihao{3} \heiti \bfseries 目\hspace*{1.5em}录
@@ -475,6 +478,15 @@ CSU Thesis class]
 % 表格格式
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
 \captionsetup[table]{
+	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
+	labelsep=quad,     % 分隔符是一个空格
+	font={kai,five},   % 表的字体, 宋体小四
+	position=top
+}
+% 算法格式
+\floatname{algorithm}{算法}
+\renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}}
+\captionsetup[algorithm]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
 	font={kai,five},   % 表的字体, 宋体小四
