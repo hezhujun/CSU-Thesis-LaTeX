@@ -472,7 +472,7 @@ CSU Thesis class]
 \captionsetup[figure]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
-	font={kai,five},   % 图的字体, 宋体小四
+	font={kai,five},   % 图的字体, 五号楷体
 	position=bottom    % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 % 表格格式
@@ -480,7 +480,7 @@ CSU Thesis class]
 \captionsetup[table]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
-	font={kai,five},   % 表的字体, 宋体小四
+	font={kai,five},   % 表的字体, 五号楷体
 	position=top
 }
 % 算法格式
@@ -489,7 +489,7 @@ CSU Thesis class]
 \captionsetup[algorithm]{
 	format=plain,      % 标题从第二行开始是否缩进，plain无缩进，hang有缩进
 	labelsep=quad,     % 分隔符是一个空格
-	font={kai,five},   % 表的字体, 宋体小四
+	font={kai,five},   % 五号楷体
 	position=top
 }
 % 编号分章节
