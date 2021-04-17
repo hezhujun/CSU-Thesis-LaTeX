@@ -51,7 +51,9 @@ CSU Thesis class]
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 % 超链接
-%\RequirePackage{hyperref}
+\RequirePackage{hyperref}
+% 取消超链接的方框
+\hypersetup{hidelinks}
 % 插入图片
 \RequirePackage{graphicx}
 % 表格
@@ -375,7 +377,7 @@ CSU Thesis class]
 % 中文摘要页（具体见附件1.样例8）上空一行居中打印论文题名（三号黑体加粗，段前18 磅、段后12 磅），换行顶格编排“摘要：”（四号黑体加粗）及摘要内容（四号宋体），每段开头空二格。摘要内容后空一行顶格编排图、表、参考文献的数量（四号宋体）；空两行后顶格编排“关键字：”和“分类号：”（四号黑体加粗），每篇论文应选取3-8 个关键词，每一关键词之间用分号（中文摘要为全角符号，英文摘要为半角符号）分开，最后一个关键词后不打标点符号。20磅行距。
 \newenvironment{abstractcn}{
     \clearpage
-	%\pdfbookmark[0]{中文摘要}{abstractcn}
+	\pdfbookmark[0]{中文摘要}{abstractcn}
     \vspace*{-5bp}
     \begin{center}
         \zihao{3}\heiti\textbf{\@titlecn}
@@ -389,7 +391,7 @@ CSU Thesis class]
 % 英文摘要格式和内容与中文摘要相对应，另起一页（具体见附件1.样例9）。上空一行居中打印英文题名（三号Times NewRoman 字体加粗），换行顶格编排“Abstract：”（四号Times NewRoman 加粗）及英文摘要内容（四号Times New Roman 字体），摘要内容每段开头留四个字符空格。摘要内容后下空两行，顶格编排“Keywords：”和“Classification：”（四号Times NewRoman 加粗）。20磅行距。
 \newenvironment{abstracten}{
     \clearpage
-	%\pdfbookmark[0]{英文摘要}{abstracten}
+	\pdfbookmark[0]{英文摘要}{abstracten}
     \vspace*{-5bp}
     \begin{center}
         \zihao{3}\textbf{\@titleen}
@@ -435,7 +437,7 @@ CSU Thesis class]
 
 \renewcommand{\tableofcontents}{%
 	\clearpage
-	%\pdfbookmark[0]{目录}{tableofcontents}
+	\pdfbookmark[0]{目录}{tableofcontents}
 	\vspace*{-5bp}
 	\begin{center}
 		\zihao{3} \heiti \bfseries 目\hspace*{1.5em}录
@@ -499,7 +501,7 @@ CSU Thesis class]
 % 上空一行居中书写“参考文献”四字(三号黑体加粗，段前18 磅、段后12 磅)，空一行左起按顺序顶格依次列出参考文献
 \defbibheading{bibliography}[\bibname]{%
 	\clearpage
-	%\phantomsection % 设置pdf书签跳转到此处
+	\phantomsection % 设置pdf书签跳转到此处
 	\markboth{参考文献}{} % 右侧页眉设置为参考文献
 	\vspace*{-5bp}
 	\begin{center}
@@ -513,7 +515,7 @@ CSU Thesis class]
 % 上空一行居中书写“攻读学位期间主要的研究成果”（三号黑体加粗，段前18 磅、段后12 磅），下空一行左起分类按时间顺序列出作者在攻读学位期间取得的与学位论文相关的研究成果（中文小四号宋体，英文小四号Times New Roman），含参加的研究项目、获奖情况、专利、专著、发表学术论文（含正式录用论文）等，每一条另起一行，开头缩进两个字符，每写一类空一行，发表学术论文中的作者名字需加粗，书写格式参照参考文献格式。
 \newcommand{\achievementtitle}{%
 	\clearpage
-	%\phantomsection % 设置pdf书签跳转到此处
+	\phantomsection % 设置pdf书签跳转到此处
 	\markboth{攻读学位期间主要研究成果}{} % 右侧页眉设置为攻读学位期间主要研究成果
 	\vspace*{-5bp}
 	\begin{center}
@@ -527,7 +529,7 @@ CSU Thesis class]
 % 作者对给予指导、各类资助和协助完成研究工作以及提供各种对论文工作有利条件的单位及个人表示感谢。上空一行居中书写“致谢”（三号黑体加粗），二字中间空两格，段前18磅、段后12 磅，后空一行缩进两个字符书写致谢内容，固定行距20磅。致谢应实事求是，切忌浮夸与庸俗之词。
 \newcommand{\thankstitle}{%
 	\clearpage
-	%\phantomsection % 设置pdf书签跳转到此处
+	\phantomsection % 设置pdf书签跳转到此处
 	\markboth{致谢}{} % 右侧页眉设置为致谢
 	\vspace*{-5bp}
 	\begin{center}
