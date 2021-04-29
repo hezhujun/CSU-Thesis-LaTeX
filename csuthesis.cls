@@ -412,6 +412,8 @@ CSU Thesis class]
 %               {before-code}%定义标题前的内容
 %               [after-code]%定义标题后的内容
 % 章名三号黑体加粗，段前18磅，段后12磅，居中
+\renewcommand{\thechapter}{第\@arabic\c@chapter 章}
+\newcommand{\chapterlabelforsection}{\@arabic\c@chapter}
 \titleformat{\chapter}{\zihao{3} \centering \heiti \bfseries}{\thechapter}{0.8em}{}[]
 %\titlespacing{command}{<left>} % 标题左间距
 %                      {<before-sep>} % 标题上间距
@@ -421,6 +423,7 @@ CSU Thesis class]
 \titlespacing{\chapter}{0pt}{0pt}{12bp}
 
 % 节名四号宋体，段前10磅，段后8磅，顶格编排
+\renewcommand{\thesection}{\chapterlabelforsection.\@arabic\c@section}
 \titleformat{\section}{\zihao{4} \songti}{\thesection}{0.8em}{}
 % 小节名小四号宋体，段前10磅，段后8磅，顶格编排
 \titleformat{\subsection}{\zihao{-4} \songti}{\thesubsection}{0.8em}{}
@@ -450,19 +453,19 @@ CSU Thesis class]
 \titlecontents{chapter}
               [0pt]
               {\heiti}
-              {\contentslabel{1em}} % 章名前面的序号所占的宽度
+              {\contentslabel{3.8em}} % 章名前面的序号所占的宽度
               {\hspace*{-1em}} % 章名前面没有序号，通过设置负宽度去掉序号所占的空间
               {\titlerule*[0.5pc]{.}\contentspage}
 
 \titlecontents{section}
-              [2em]
+              [0em]
               {}
               {\contentslabel{1.8em}}
               {}
               {\titlerule*[0.5pc]{.}\contentspage}
 
 \titlecontents{subsection}
-              [4em]
+              [3em]
               {}
               {\contentslabel{2.5em}}
               {}
