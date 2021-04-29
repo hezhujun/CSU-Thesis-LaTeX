@@ -41,6 +41,7 @@ CSU Thesis class]
 %\RequirePackage{subcaption}
 % 管理参考文献
 % 设置参考文献样式为 gb7714-2015
+% 格式规范 http://writeaid.cnki.net/Reference/RefDesc.aspx
 \RequirePackage[style=gb7714-2015, backend=biber]{biblatex}
 % 设置页眉和页脚
 \RequirePackage{fancyhdr}

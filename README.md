@@ -21,6 +21,20 @@ xelatex -synctex=1 -interaction=nonstopmode main.tex
 
 **注意**： 论文使用的中文字体包括宋体、黑体、楷书和华文新魏，操作系统必须包含这些字体，否则编译失败。
 
+### 盲审版本
+
+盲审版本需要隐去学生和导师信息。封面和扉页的信息可以通过`main.tex`导言区的设置去掉个人信息，如
+```tex
+%\blindreviewtrue
+\blindreviewfalse
+```
+改成
+```tex
+\blindreviewtrue
+%\blindreviewfalse
+```
+致谢和参考文献中相关姓名需要手动删除。
+
 ## 参考资料
 
 - 主要参考郭大侠编写的[LaTex模板](https://github.com/CSGrandeur/CSU-Thesis-LaTeX-Template)。
