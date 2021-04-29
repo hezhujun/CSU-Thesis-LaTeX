@@ -599,6 +599,7 @@ CSU Thesis class]
 \newcommand{\mainmatter}{
 	\pagestyle{mainstyle}
 	\pagenumbering{arabic}
+	\renewcommand{\chaptermark}[1]{\markboth{\thechapter \hspace{0.8em}#1}{}}
 }
 
 
