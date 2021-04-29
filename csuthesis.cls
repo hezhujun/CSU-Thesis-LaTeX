@@ -183,6 +183,10 @@ CSU Thesis class]
 \newcommand*{\schoolcode}[1]{\gdef\@schoolcode{#1}}                     % 学校代码
 \newcommand*{\udc}[1]{\gdef\@udc{#1}}                                   % UDC
 \newcommand*{\academiccategory}[1]{\gdef\@academiccategory{#1}}         % 学术类别
+
+% 使 \cleardoublepage 起作用
+\@twosidetrue
+
 % 1. 封面、扉页%
 %-----------------------------------------------------------------------------------------------------------%
 
@@ -191,7 +195,10 @@ CSU Thesis class]
 % 学位论文封面格式分为公开学位论文（学术学位）、公开学位论文（专业学位）、涉密学位论文（学术学位）、涉密学位论文（专业学位）等四种形式（具体见样例1-4）。
 % 封面正面上填写论文题名、学科专业（一级学科或专业学位类别）、学科方向或专业领域、作者姓名、指导教师姓名等内容。在书脊上方印“博（或硕）士学位论文”，下方印“中南大学”。
 % 涉密学位论文须在封面右上角标注密级、定密日期，由校保密办公室审批、盖章。
+% 盲审判断
 \newif\ifblindreview\blindreviewfalse
+% 是否是学术学位
+\newif\ifacademiccategory\academiccategorytrue
 % 以下为公开学位论文（学术）的封面内容
 % TODO: 
 % - 公开学位论文（专业）
@@ -241,6 +248,8 @@ CSU Thesis class]
 % 中图分类号（http://www.ztflh.com/）和UDC号（《国际十进位分类法》）可在图书馆查阅获得
 
 \newcommand{\maketitlepage} {
+	\cleardoublepage
+	\thispagestyle{empty}
 	\setlength\parindent{0em}
 	{
 		\zihao{4} \songti
@@ -312,6 +321,8 @@ CSU Thesis class]
 % 应该有一定自由度。
 
 \newcommand{\announcement}{
+	\cleardoublepage
+	\thispagestyle{empty}
 	% 按学校模板这里是华文新魏字体
 	
 	{\centering \zihao{2} \hwxw 学位论文原创性声明 \par}
@@ -377,7 +388,7 @@ CSU Thesis class]
 
 % 中文摘要页（具体见附件1.样例8）上空一行居中打印论文题名（三号黑体加粗，段前18 磅、段后12 磅），换行顶格编排“摘要：”（四号黑体加粗）及摘要内容（四号宋体），每段开头空二格。摘要内容后空一行顶格编排图、表、参考文献的数量（四号宋体）；空两行后顶格编排“关键字：”和“分类号：”（四号黑体加粗），每篇论文应选取3-8 个关键词，每一关键词之间用分号（中文摘要为全角符号，英文摘要为半角符号）分开，最后一个关键词后不打标点符号。20磅行距。
 \newenvironment{abstractcn}{
-    \clearpage
+    \cleardoublepage
 	\pdfbookmark[0]{中文摘要}{abstractcn}
     \vspace*{-5bp}
     \begin{center}
@@ -391,7 +402,7 @@ CSU Thesis class]
 
 % 英文摘要格式和内容与中文摘要相对应，另起一页（具体见附件1.样例9）。上空一行居中打印英文题名（三号Times NewRoman 字体加粗），换行顶格编排“Abstract：”（四号Times NewRoman 加粗）及英文摘要内容（四号Times New Roman 字体），摘要内容每段开头留四个字符空格。摘要内容后下空两行，顶格编排“Keywords：”和“Classification：”（四号Times NewRoman 加粗）。20磅行距。
 \newenvironment{abstracten}{
-    \clearpage
+    \cleardoublepage
 	\pdfbookmark[0]{英文摘要}{abstracten}
     \vspace*{-5bp}
     \begin{center}
