@@ -227,7 +227,7 @@ CSU Thesis class]
 		{\zihao{-2}\bfseries \@titleen \par} % 小二号，Times New Roman，加粗
 		\vspace{\stretch{1}}
 		{
-			\renewcommand{\baselinestretch}{2}
+			\renewcommand{\baselinestretch}{1.8}
 			\zihao{3} \songti \bfseries
 			\begin{tabular}{l >{\centering\arraybackslash}p{15em}}
 				\makebox[5em][s]{学科专业} & \@priormajor \\
@@ -287,14 +287,14 @@ CSU Thesis class]
 		\vspace{1cm}
 		\centering
 		{\zihao{-2} \heiti \bfseries 硕士学位论文 \par} % 小二号黑体加粗
-		\vspace{\baselineskip}
+		\vspace{1.5\baselineskip}
 		{\zihao{2} \heiti \bfseries \@titlecn \par} % 二号黑体加粗
 		{\zihao{-2}\bfseries \@titleen \par} % 小二号，Times New Roman，加粗
-		\vspace{\baselineskip}
+		\vspace{1.5\baselineskip}
 		{
-			\renewcommand{\baselinestretch}{2}
+			\renewcommand{\baselinestretch}{1.8}
 			\zihao{3} \songti
-			\begin{tabular}{l >{\centering\arraybackslash}p{15em}}
+			\begin{tabular}{l >{\centering\arraybackslash}p{13em}}
 				\makebox[6em][s]{作者姓名}      &  \@author        \\
 				\makebox[6em][s]{学科专业}      &  \@priormajor    \\
 				\ifacademiccategory
@@ -309,7 +309,7 @@ CSU Thesis class]
 			\end{tabular}
 		}
 		\par
-		\vspace{1cm}
+		\vspace{1.5\baselineskip}
 		{
 			\zihao{-3} \songti
 			论文答辩日期 \underline{\makebox[3cm][c]{}}
@@ -338,6 +338,7 @@ CSU Thesis class]
 	\pagestyle{empty}
 	\noindent
 	\parbox[b][\textheight][t]{\textwidth}{
+		\vspace{1cm}
 		% 按学校模板这里是华文新魏字体
 		\begin{center}
 			\zihao{2} \hwxw \bfseries 学位论文原创性声明
@@ -351,7 +352,7 @@ CSU Thesis class]
 
 			\vspace{2\baselineskip}
 			\hspace{2em}作者签名：\underline{\makebox[3cm][c]{}}
-			\hspace{3em}
+			\hspace{2em}
 			日期：
 			\underline{\makebox[2em][c]{}} 年
 			\underline{\makebox[1.5em][c]{}} 月
