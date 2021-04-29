@@ -544,6 +544,17 @@ CSU Thesis class]
 }
 
 % 页眉页脚设置
+
+% 封面、扉页部分
+\fancypagestyle{coverpagestyle}{
+	\fancyhf{} % 清空页眉页脚的设置
+	\renewcommand{\headrulewidth}{0pt} % 分隔线宽度
+}
+
+\newcommand{\frontfrontmatter} {
+	\pagestyle{coverpagestyle}
+}
+
 % 前置部分
 \fancypagestyle{frontstyle}{
 	\fancyhf{} % 清空页眉页脚的设置
