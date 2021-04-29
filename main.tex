@@ -3,8 +3,8 @@
 % 设置并排放置多图
 \usepackage{subfigure}
 
-\titlecn{中文标题}
-\titleen{English Title}
+\titlecn{零一二三四五六七八九十零一二三四五六七八九十}
+\titleen{One Two Three Four Five Six Seven Eight Nine Ten One Two Three Four Five Six Seven Eight Nine Ten}
 \author{作者}
 
 \priormajor{计算机科学与技术}
@@ -19,7 +19,9 @@
 \clcnumber{TP391} 				% 中图分类号 Chinese Library Classification
 \schoolcode{10533}			% 学校代码
 \udc{004.9}						% UDC
-\academiccategory{学术学位}	 % 学术类别
+%\academiccategory{学术学位}	 % 学术类别
+\academiccategorytrue      % 学术学位，如果是，注释下面一行
+%\academiccategoryfalse    % 专业学位，如果是，注释上面一行
 %\blindreviewtrue
 \blindreviewfalse
 
@@ -47,6 +49,8 @@
 	\announcement
 	\fi
 
+    \cleardoublepage % 重要，必须有这条命令
+    \frontmatter
     \begin{abstractcn}
         \noindent
         {\heiti \textbf{摘要：}}摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要。\fontinfo{摘要}。

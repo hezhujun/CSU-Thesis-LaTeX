@@ -172,7 +172,7 @@ CSU Thesis class]
 \newcommand*\titleen[1]{\gdef\@titleen{#1} \gdef\@title{#1}}            % 英文标题
 
 \newcommand*{\priormajor}[1]{\gdef\@priormajor{#1}}                     % 一级学科（学科专业）
-\newcommand*{\minormajor}[1]{\gdef\@minormajor{#1}}                     % 二级学科（学科方向）
+\newcommand*{\minormajor}[1]{\gdef\@minormajor{#1}}                     % 二级学科（学科方向或专业领域）
 \newcommand*{\interestmajor}[1]{\gdef\@interestmajor{#1}}               % 研究方向，关键词组
 \newcommand*{\department}[1]{\gdef\@department{#1}}                     % 二级培养单位
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}                     % 导师
@@ -185,7 +185,14 @@ CSU Thesis class]
 \newcommand*{\academiccategory}[1]{\gdef\@academiccategory{#1}}         % 学术类别
 
 % 使 \cleardoublepage 起作用
-\@twosidetrue
+\renewcommand{\cleardoublepage}{%
+	\clearpage
+	\ifodd\c@page
+	\else
+		\hbox{}
+		\newpage
+	\fi
+}
 
 % 1. 封面、扉页%
 %-----------------------------------------------------------------------------------------------------------%
@@ -209,35 +216,41 @@ CSU Thesis class]
 % 定义 \makecoverpage 实现封面的重新绘制
 % -----------------------------------------------%
 \newcommand{\makecoverpage} {
-	\thispagestyle{empty}
-	\begin{center}
-		\linespread{1.5}
+	\pagestyle{empty}
+	\noindent
+	\parbox[b][\textheight][t]{\textwidth}{
+		\centering
 		\vspace*{1.5cm}
-		{\zihao{-2} \bfseries \heiti 硕士学位论文 \par} % 小二号黑体
-		\vspace{2\baselineskip} % 两个空行
-		{\zihao{2} \bfseries \heiti \@titlecn \par} % 二号黑体
-		{\zihao{-2}\bfseries \@titleen \par} % 小二号，timesnewroman
-		\vspace{2\baselineskip} % 两个空行
-		
+		{\zihao{-2} \heiti \bfseries 硕士学位论文 \par} % 小二号黑体加粗
+		\vspace{2\baselineskip}
+		{\zihao{2} \heiti \bfseries \@titlecn \par} % 二号黑体加粗
+		{\zihao{-2}\bfseries \@titleen \par} % 小二号，Times New Roman，加粗
+		\vspace{\stretch{1}}
 		{
-			\zihao{3} \songti
-			\begin{tabular}{ll}
-				\makebox[4em][s]{学科专业} & \@priormajor \\
-				\makebox[4em][s]{学科方向} & \@minormajor \\        
-				\ifblindreview
-				\makebox[4em][s]{研究方向} & \@interestmajor \\
-				\makebox[4em][s]{学   号}  & \@studentid \\
+			\renewcommand{\baselinestretch}{2}
+			\zihao{3} \songti \bfseries
+			\begin{tabular}{l >{\centering\arraybackslash}p{15em}}
+				\makebox[5em][s]{学科专业} & \@priormajor \\
+				\ifacademiccategory
+					\makebox[5em][s]{学科方向} & \@minormajor \\
 				\else
-				\makebox[4em][s]{作者姓名} & \@author \\
-				\makebox[4em][s]{指导教师} & \@supervisor \\
+					\makebox[5em][s]{专业领域} & \@minormajor \\
+				\fi
+
+				\ifblindreview
+				\makebox[5em][s]{研究方向} & \@interestmajor \\
+				\makebox[5em][s]{学号}    & \@studentid \\
+				\else
+				\makebox[5em][s]{作者姓名} & \@author \\
+				\makebox[5em][s]{指导教师} & \@supervisor \\
 				\fi
 			\end{tabular}
 		}
 		\par
-		\vspace{4cm}
-		{\zihao{-3} \songti 中\quad 南\quad 大\quad 学 \par} 
+		\vspace{\stretch{1.5}}
 		{\zihao{-3} \songti 2021年4月 \par}
-	\end{center}
+		\vspace{1cm}
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,69 +261,69 @@ CSU Thesis class]
 % 中图分类号（http://www.ztflh.com/）和UDC号（《国际十进位分类法》）可在图书馆查阅获得
 
 \newcommand{\maketitlepage} {
+	\pagestyle{empty}
 	\cleardoublepage
-	\thispagestyle{empty}
-	\setlength\parindent{0em}
-	{
-		\zihao{4} \songti
-		\begin{tabular}{l@{}c p{3cm} l@{}c}     % @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
-			中图分类号  & \underline{\makebox[3cm][c]{\@clcnumber}} & &
-			学校代码    & \underline{\makebox[3cm][c]{\@schoolcode}} \\ 
-			UDC         & \underline{\makebox[3cm][c]{\@udc}} & &
-			学术类别    & \underline{\makebox[3cm][c]{\@academiccategory}} \\ 
-		\end{tabular}
-	}
-	
-	{
-		\centering
-		
+	\noindent
+	\parbox[b][\textheight][t]{\textwidth}{
 		{
-			\zihao{-2}
-			% 注意centering的使用，只在局部环境中使用。
-			\vspace{4ex} % 空行
-			{ \bfseries \heiti 硕士学位论文 \par} % 小二号黑体
-			\vspace{4ex} % 空行
-			{ \bfseries \heiti \@titlecn \par} % 中文标题小二号黑体
-			{ \bfseries \@titleen \par} % 英文标题小二号 Times New Roman
-		}
-		
-		\vspace{3cm} % 空行
-		
-		{
-			\zihao{3} \songti 
-			\setlength\parindent{2em} % 由于这里填写的内容不对称，完全居中反而不够美观，于是缩进一个汉字的宽度
-			\begin{tabular}{ll}
-				% 利用\makebox[7em][s]{} 实现两端对齐，即字数不同但左右对齐。
-				% 7em表示分散对齐的最长的长度为7个字的长度，参数s表示两端分散对齐。
-				\makebox[7em][s]{作者姓名：}      &  \@author        \\
-				\makebox[7em][s]{学科专业：}      &  \@priormajor    \\
-				\makebox[7em][s]{学科方向：}      &  \@minormajor    \\
-				\makebox[7em][s]{研究方向：}      &  \@interestmajor \\
-				\makebox[7em][s]{二级培养单位：}  &  \@department    \\
-				\makebox[7em][s]{指导教师：}      &  \@supervisor    \\
-				% \makebox[7em][s]{副指导教师：}    &  \@subsupervisor \\
+			\zihao{4} \songti
+			% @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
+			\begin{tabular}{l @{} c}
+				中图分类号 & \underline{\makebox[3cm][c]{\@clcnumber}} \\
+				UDC      & \underline{\makebox[3cm][c]{\@udc}}
+			\end{tabular}
+			\hspace{\fill}
+			\begin{tabular}{l @{} c}
+				学校代码 & \underline{\makebox[3cm][c]{\@schoolcode}} \\
+				学术类别 & 
+				\ifacademiccategory
+					\underline{\makebox[3cm][c]{学术学位}}
+				\else
+					\underline{\makebox[3cm][c]{专业学位}}
+				\fi
 			\end{tabular}
 		}
-		
-		\vspace{2.5cm}
-		
+		\par
+		\vspace{1cm}
+		\centering
+		{\zihao{-2} \heiti \bfseries 硕士学位论文 \par} % 小二号黑体加粗
+		\vspace{\baselineskip}
+		{\zihao{2} \heiti \bfseries \@titlecn \par} % 二号黑体加粗
+		{\zihao{-2}\bfseries \@titleen \par} % 小二号，Times New Roman，加粗
+		\vspace{\baselineskip}
+		{
+			\renewcommand{\baselinestretch}{2}
+			\zihao{3} \songti
+			\begin{tabular}{l >{\centering\arraybackslash}p{15em}}
+				\makebox[6em][s]{作者姓名}      &  \@author        \\
+				\makebox[6em][s]{学科专业}      &  \@priormajor    \\
+				\ifacademiccategory
+					\makebox[6em][s]{学科方向} & \@minormajor \\
+				\else
+					\makebox[6em][s]{专业领域} & \@minormajor \\
+				\fi
+				\makebox[6em][s]{研究方向}      &  \@interestmajor \\
+				\makebox[6em][s]{二级培养单位}  &  \@department    \\
+				\makebox[6em][s]{指导教师}      &  \@supervisor    \\
+				% \makebox[6em][s]{副指导教师}    &  \@subsupervisor \\
+			\end{tabular}
+		}
+		\par
+		\vspace{1cm}
 		{
 			\zihao{-3} \songti
-			\begin{tabular}{l@{}l p{0.5cm} l@{}l}
-				论文答辩日期   & \underline{\makebox[3cm][c]{}} & & 
-				答辩委员会主席 & \underline{\makebox[3cm][c]{}} \\ 
-			\end{tabular}
+			论文答辩日期 \underline{\makebox[3cm][c]{}}
+			\hspace{\fill}
+			答辩委员会主席 \underline{\makebox[3cm][c]{}}
 		}
+		\vspace{\fill}
+		\begin{center}
+			\zihao{-3} \songti
+			\makebox[6em][s]{中南大学} \par
+			\makebox[6em][s]{2021年04月}
+		\end{center}
+		\vspace{1cm}
 	}
-	\par
-	\vspace{2.5cm}
-	{
-		\linespread{1.5}
-		{\centering \zihao{-3} \songti 中\quad 南\quad 大\quad 学 \par} 
-		{\centering \zihao{-3} \songti 2021年4月 \par}
-	}
-	% 中 南 大 学 （小三号宋体）
-	% 年    月 （小三号宋体，填阿拉伯数字）
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,64 +335,60 @@ CSU Thesis class]
 
 \newcommand{\announcement}{
 	\cleardoublepage
-	\thispagestyle{empty}
-	% 按学校模板这里是华文新魏字体
-	
-	{\centering \zihao{2} \hwxw 学位论文原创性声明 \par}
-	
-	\vspace{0.5cm}
-	
-	\setlength{\parindent}{2em} % 首行缩进
-	{
-		\linespread{1.5}
-		\zihao{4}
-		本人郑重声明，所呈交的学位论文是本人在指导教师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。
-		
-		申请学位论文与资料若有不实之处，本人承担一切相关责任。
-		
-		\vspace{0.5cm}
-		
-		\begin{flushright}
-			作者签名：\underline{\makebox[5em][c]{}} ~~
+	\pagestyle{empty}
+	\noindent
+	\parbox[b][\textheight][t]{\textwidth}{
+		% 按学校模板这里是华文新魏字体
+		\begin{center}
+			\zihao{2} \hwxw \bfseries 学位论文原创性声明
+		\end{center}
+		\vspace{\baselineskip}
+		{
+			\zihao{4} \songti
+			\hspace{2em}本人郑重声明，所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。
+
+			\hspace{2em}申请学位论文与资料若有不实之处，本人承担一切相关责任。
+
+			\vspace{2\baselineskip}
+			\hspace{2em}作者签名：\underline{\makebox[3cm][c]{}}
+			\hspace{3em}
 			日期：
-			\underline{\makebox[3em][c]{}} 年
+			\underline{\makebox[2em][c]{}} 年
 			\underline{\makebox[1.5em][c]{}} 月
 			\underline{\makebox[1.5em][c]{}} 日
-		\end{flushright}
+		}
 		
-	}
-	
-	\vspace{1cm}
-	
-	{\centering \zihao{2} \hwxw 学位论文版权使用授权书 \par}
-	
-	\vspace{0.5cm}
-	
-	{
-		\linespread{1.5}
-		\zihao{4} 
-		本学位论文作者和指导教师完全了解中南大学有关保留、使用学位论文的规定：即学校有权保留并向国家有关部门或机构送交学位论文的复印件和电子版；本人允许本学位论文被查阅和借阅；学校可以将本学位论文的全部或部分内容编入有关数据库进行检索，可以采用复印、缩印或其它手段保存和汇编本学位论文。
-		
-		保密论文待解密后适应本声明。
-		
-		\vspace{1cm}
-		
-		\begin{table}[!ht]
-			\zihao{4} 
-			\begin{tabular*}{\hsize}{@{}@{\extracolsep{\fill}}lll@{}}
-				作者签名：\underline{\makebox[5em][c]{}} & &
-				指导教师签名：\underline{\makebox[5em][c]{}} \\
-				\\
-				日期：
-				\underline{\makebox[3em][c]{}} 年
-				\underline{\makebox[1.5em][c]{}} 月
-				\underline{\makebox[1.5em][c]{}} 日 & &
-				日期：
-				\underline{\makebox[3em][c]{}} 年
-				\underline{\makebox[1.5em][c]{}} 月
-				\underline{\makebox[1.5em][c]{}} 日 \\
-			\end{tabular*}
-		\end{table}
+		\vspace{\fill}
+
+		\begin{center}
+			\zihao{2} \hwxw \bfseries 学位论文版权使用授权书
+		\end{center}
+		\vspace{\baselineskip}
+		{
+			\zihao{4} \songti
+			\hspace{2em}本学位论文作者和指导教师完全了解中南大学有关保留、使用学位论文的规定：即学校有权保留并向国家有关部门或机构送交学位论文的复印件和电子版；本人允许本学位论文被查阅和借阅；学校可以将本学位论文的全部或部分内容编入有关数据库进行检索，可以采用复印、缩印或其它手段保存和汇编本学位论文。
+
+			\hspace{2em}保密论文待解密后适应本声明。
+
+			\vspace{2\baselineskip}
+			
+			{
+				\zihao{4} 
+				\begin{tabular*}{\hsize}{@{}@{\extracolsep{\fill}}lll@{}}
+					作者签名：\underline{\makebox[5em][c]{}} & &
+					导师签名\underline{\makebox[5em][c]{}} \\
+					\\
+					日期：
+					\underline{\makebox[3em][c]{}} 年
+					\underline{\makebox[1.5em][c]{}} 月
+					\underline{\makebox[1.5em][c]{}} 日 & &
+					日期：
+					\underline{\makebox[3em][c]{}} 年
+					\underline{\makebox[1.5em][c]{}} 月
+					\underline{\makebox[1.5em][c]{}} 日 \\
+				\end{tabular*}
+			}
+		}
 	}
 }
 
@@ -402,7 +411,7 @@ CSU Thesis class]
 
 % 英文摘要格式和内容与中文摘要相对应，另起一页（具体见附件1.样例9）。上空一行居中打印英文题名（三号Times NewRoman 字体加粗），换行顶格编排“Abstract：”（四号Times NewRoman 加粗）及英文摘要内容（四号Times New Roman 字体），摘要内容每段开头留四个字符空格。摘要内容后下空两行，顶格编排“Keywords：”和“Classification：”（四号Times NewRoman 加粗）。20磅行距。
 \newenvironment{abstracten}{
-    \cleardoublepage
+	\clearpage
 	\pdfbookmark[0]{英文摘要}{abstracten}
     \vspace*{-5bp}
     \begin{center}
@@ -462,21 +471,21 @@ CSU Thesis class]
 }
 
 \titlecontents{chapter}
-              [0pt]
+              [3.8em]
               {\heiti}
               {\contentslabel{3.8em}} % 章名前面的序号所占的宽度
-              {\hspace*{-1em}} % 章名前面没有序号，通过设置负宽度去掉序号所占的空间
+              {\hspace*{-3.8em}} % 章名前面没有序号，通过设置负宽度去掉序号所占的空间
               {\titlerule*[0.5pc]{.}\contentspage}
 
 \titlecontents{section}
-              [0em]
+              [3.8em]
               {}
               {\contentslabel{1.8em}}
               {}
               {\titlerule*[0.5pc]{.}\contentspage}
 
 \titlecontents{subsection}
-              [3em]
+              [6.5em]
               {}
               {\contentslabel{2.5em}}
               {}
@@ -563,7 +572,7 @@ CSU Thesis class]
 }
 
 \newcommand{\frontfrontmatter} {
-	\pagestyle{coverpagestyle}
+	\pagestyle{empty}
 }
 
 % 前置部分
