@@ -21,6 +21,12 @@ xelatex -synctex=1 -interaction=nonstopmode main.tex
 
 **注意**： 论文使用的中文字体包括宋体、黑体、楷书和华文新魏，操作系统必须包含这些字体，否则编译失败。
 
+
+填写扉页的中图分类号时查阅[中国图书馆分类法](http://www.ztflh.com/)。
+
+填写扉页的UDC时查询 [Universal Decimal Classification](http://www.udcsummary.info/php/index.php?lang=chi&pr=Y)。
+
+
 ### 盲审版本
 
 盲审版本需要隐去学生和导师信息。封面和扉页的信息可以通过`main.tex`导言区的设置去掉个人信息，如
