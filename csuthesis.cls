@@ -42,7 +42,7 @@ CSU Thesis class]
 % 管理参考文献
 % 设置参考文献样式为 gb7714-2015
 % 格式规范 http://writeaid.cnki.net/Reference/RefDesc.aspx
-\RequirePackage[style=gb7714-2015, backend=biber]{biblatex}
+\RequirePackage[style=gb7714-2015, gbpub=false, backend=biber]{biblatex}
 % 设置页眉和页脚
 \RequirePackage{fancyhdr}
 % 页面布局
@@ -248,7 +248,7 @@ CSU Thesis class]
 		}
 		\par
 		\vspace{\stretch{1.5}}
-		{\zihao{-3} \songti 2021年4月 \par}
+		{\zihao{-3} \songti 2021年5月 \par}
 		\vspace{1cm}
 	}
 }
@@ -320,7 +320,7 @@ CSU Thesis class]
 		\begin{center}
 			\zihao{-3} \songti
 			\makebox[6em][s]{中南大学} \par
-			\makebox[6em][s]{2021年04月}
+			\makebox[6em][s]{2021年5月}
 		\end{center}
 		\vspace{1cm}
 	}
@@ -535,6 +535,30 @@ CSU Thesis class]
 	\addcontentsline{toc}{chapter}{参考文献}
 	\vspace*{12bp}
 }
+
+% 附录
+\newcounter{appendix}
+\setcounter{appendix}{0}
+\newcounter{asection}[appendix]
+\setcounter{asection}{0}
+\newcounter{asubsection}[asection]
+\setcounter{asubsection}{0}
+\renewcommand{\theappendix}{附录\Alph{appendix}}
+\renewcommand{\theasection}{\Alph{appendix}.\arabic{asection}}
+\renewcommand{\theasubsection}{\theasection.\arabic{asubsection}}
+\renewcommand{\appendix}[1]{%
+	\stepcounter{appendix}
+	\chapter*{\theappendix\hspace{0.8em}#1}
+	\markboth{\theappendix\quad#1}{}
+	\addcontentsline{toc}{chapter}{\theappendix\hspace{0.8em}#1}
+
+	\renewcommand{\thefigure}{\Alph{appendix}-\arabic{figure}}
+	\renewcommand{\thetable}{\Alph{appendix}-\arabic{table}}
+	\renewcommand{\thealgorithm}{\Alph{appendix}-\arabic{algorithm}}
+	\renewcommand{\theequation}{\Alph{appendix}-\arabic{equation}}
+}
+\newcommand{\asection}[1]{\stepcounter{asection} \section*{\theasection\hspace{0.8em}#1}}
+\newcommand{\asubsection}[1]{\stepcounter{asubsection} \subsection*{\theasubsection\hspace{0.8em}#1}}
 
 % 攻读学位期间主要研究成果
 % 上空一行居中书写“攻读学位期间主要的研究成果”（三号黑体加粗，段前18 磅、段后12 磅），下空一行左起分类按时间顺序列出作者在攻读学位期间取得的与学位论文相关的研究成果（中文小四号宋体，英文小四号Times New Roman），含参加的研究项目、获奖情况、专利、专著、发表学术论文（含正式录用论文）等，每一条另起一行，开头缩进两个字符，每写一类空一行，发表学术论文中的作者名字需加粗，书写格式参照参考文献格式。

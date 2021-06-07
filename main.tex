@@ -219,7 +219,7 @@
         \end{tabular}
     \end{table}
 
-    长表格的续表形式\ref{tab:long_table1}。如果长表格的多个表格之间插入了后文的内容，灵活地调整表格的长度，使得一个表格占一页。或者灵活地调整浮动体table的位置。或者调整后文（看tex文件）。
+    如果表格的内容太多，可以把表格的文字缩小，不到迫不得已不要使用表格的续表形式。长表格的续表形式\ref{tab:long_table1}。如果长表格的多个表格之间插入了后文的内容，灵活地调整表格的长度，使得一个表格占一页。或者灵活地调整浮动体table的位置。或者调整后文（看tex文件）。
     \begin{table}[!t]
         \centering
         \caption{长表格}
@@ -265,7 +265,7 @@
 
     \begin{table}[!t]
         \centering
-        \caption*{表\thetable \quad 长表格续}
+        \caption*{表\thetable \quad 长表格（续）}
         \begin{tabular}{c c}
             \toprule[1.5bp]
             列1 & 列2 \\
@@ -423,6 +423,21 @@
 
     % 参考文献
     \printbibliography
+
+    \appendix{第一个附录}
+    如果不是一定要加附录，千万不要加附录。
+    \asection{附录子标题}
+    如果不是一定要加附录，千万不要加附录。
+    \asubsection{附录小标题}
+    如果不是一定要加附录，千万不要加附录。
+
+    \appendix{第二个附录}
+    如果不是一定要加附录，千万不要加附录。
+    \asection{附录子标题}
+    如果不是一定要加附录，千万不要加附录。
+    \asubsection{附录小标题}
+    如果不是一定要加附录，千万不要加附录。
+
     
     % 攻读学位期间主要研究成果
     \achievementtitle
